@@ -36,4 +36,7 @@ Sibling project: [xsphere-slow-control](https://github.com/Moore-Lab/xsphere-slo
 
 ## Status
 
-Scaffolding only — repo + submodule structure in place; development plan to follow.
+Scaffolding only — repo + submodule structure in place; `basler-acA1440` driver + test
+GUI implemented. Development is tracked per repo in `docs/session-log.md` (this repo's:
+[`docs/session-log.md`](docs/session-log.md)) — write to the log of the repo being
+modified.
