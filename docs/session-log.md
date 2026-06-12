@@ -18,6 +18,20 @@ See the [README](../README.md) for project vision.
 
 ---
 
+## 2026-06-12 — Reframe README: this is the fast control system
+
+User clarified the architecture: the experiment has two **separate** control systems —
+**slow control** (sibling repo `xsphere-slow-control`) and **fast control**. `xsphere-daq`
+**is the fast control system**; cameras are its starting point, with more fast-control
+subsystems to follow. The two systems are **not** integrated (corrects an earlier wrong
+assumption that slow-control was an integration target).
+
+- Reframed the top-level README intro accordingly; clarified the slow-control repo is a
+  separate, non-integrated system (was listed as a "sibling project").
+- Refreshed the stale Status section to reflect current state (both cameras validated;
+  shared engine + recorder; multi-camera web app with controls + presets; Hayear
+  scaffolded). Recorded in memory `fast-vs-slow-control-architecture`.
+
 ## 2026-06-11 — Per-repo session logs established
 
 **Context.** First logged session. Reviewed the README hierarchy and code to baseline the
