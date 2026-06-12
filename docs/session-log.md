@@ -18,6 +18,25 @@ See the [README](../README.md) for project vision.
 
 ---
 
+## 2026-06-12 — Top-level fast-control panel (xsphere_daq.panel)
+
+Promoted the camera dock into the top-level control surface (README direction step 2:
+"centralize"). New `xsphere_daq` package:
+
+- `xsphere_daq/panel.py` — a parent FastAPI app with a fast-control **dashboard at `/`**
+  that mounts the camera dock (`camera_dock.webapp`) at **`/cameras`** as the first
+  subsystem. The parent owns the lifecycle (brings the cameras up on startup, down on
+  shutdown via `webapp.start_all`/`stop_all`; the camera app is built with
+  `manage_lifecycle=False`). Future fast-control subsystems mount alongside.
+- `python -m xsphere_daq.panel basler zelux --host 0.0.0.0 --port 8000`.
+- Added a top-level `requirements.txt` (`-r xsphere-camera-dock/requirements.txt`) and a
+  "Running the fast-control panel" section to the README.
+
+**Validated on hardware (Basler + Zelux):** dashboard at `/`; cameras at `/cameras/`
+with all links correctly prefixed; mounted info/controls/stream work; both cameras
+brought up by the parent lifecycle. (Required a webapp mountability fix — see the dock
+log.)
+
 ## 2026-06-12 — Reframe README: this is the fast control system
 
 User clarified the architecture: the experiment has two **separate** control systems —

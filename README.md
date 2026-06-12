@@ -30,6 +30,18 @@ git clone --recurse-submodules https://github.com/Moore-Lab/xsphere-daq.git
 git submodule update --init --recursive
 ```
 
+## Running the fast-control panel
+
+```bash
+pip install -r requirements.txt          # + each camera SDK (see submodule READMEs)
+python -m xsphere_daq.panel basler zelux --host 0.0.0.0 --port 8000
+```
+
+Open `http://<host>:8000/` for the dashboard. Cameras live under `/cameras/` (live
+streams + per-camera control: exposure / gain / ROI / auto-exposure, recording,
+presets). `--host 0.0.0.0` exposes it for remote operation. Future fast-control
+subsystems mount alongside the cameras under the same panel.
+
 ## Direction
 
 1. **Cameras first** — get each camera working in isolation (driver + test GUI), then

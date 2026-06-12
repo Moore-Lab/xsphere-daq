@@ -1,0 +1,3 @@
+# Top-level fast-control panel (xsphere_daq.panel). Builds on the camera dock's deps
+# and each camera submodule's own requirements (per-camera SDKs install separately).
+-r xsphere-camera-dock/requirements.txt
